@@ -51,7 +51,7 @@ public class MiHashmap
         }
         return indice;
     }
-    
+
     /**
      * Devuelve el valor asociado con la clave especificada o -1 en caso de que la clave no exista.
      */
@@ -68,5 +68,11 @@ public class MiHashmap
         }
         return valorDevuelto;
     }
-}
 
+    /**
+     * Devuelve true si el mapa no contiene elementos.
+     */
+    public boolean isEmpty(){
+        return (claves.length == 0);
+    }
+}

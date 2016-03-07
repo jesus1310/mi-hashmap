@@ -28,7 +28,7 @@ public class MiHashmap
     public int put(String clave,int valor){
         int indice = 0;
         boolean repetida = false;
-        while (indice<valores.length && !repetida ) {
+        while (indice<claves.length && !repetida ) {
             if (clave.equals(claves[indice])) {
                 repetida = true;
                 valores[indice] = valor;
@@ -50,6 +50,23 @@ public class MiHashmap
             valores = tempValores;
         }
         return indice;
+    }
+    
+    /**
+     * Devuelve el valor asociado con la clave especificada o -1 en caso de que la clave no exista.
+     */
+    public int get(String clave){
+        int valorDevuelto = -1;
+        int indice = 0;
+        boolean encontrado = false;
+        while (indice<claves.length && !encontrado ) {
+            if (clave.equals(claves[indice])) {
+                encontrado = true;
+                valorDevuelto = valores[indice];
+            }
+            indice++;
+        }
+        return valorDevuelto;
     }
 }
 
